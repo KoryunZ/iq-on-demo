@@ -84,7 +84,7 @@ input,select,textarea{font:inherit;color:var(--text)}
   .jump{padding:8px 11px}
   .script ol{gap:5px}
 }
-@media (min-width:1200px){ .role-sw,.proxy,.proxy-row{display:none !important} }
+@media (min-width:1200px){ .role-sw,.proxy-row{display:none !important} }
 @media (max-width:1199px){
   .stage[data-role="player"] .dwrap.host,.stage[data-role="host"] .dwrap.player{display:none}
   .dcap{display:none}
@@ -108,9 +108,6 @@ input,select,textarea{font:inherit;color:var(--text)}
 .topbar .back svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 .role-sw{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:11.5px;font-weight:600;color:var(--muted);flex-shrink:0}
 .role-sw svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
-.chip-live{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--live);text-transform:uppercase;flex-shrink:0}
-.chip-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live);animation:pulse 1.4s infinite}
-@keyframes pulse{50%{opacity:.3}}
 .view{flex:1;overflow-y:auto;padding:4px 18px 22px;display:flex;flex-direction:column;gap:14px}
 .view > *{flex-shrink:0}
 .tabbar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border-top:1px solid var(--line);background:var(--surface);padding:8px 4px 14px;flex-shrink:0}
@@ -118,7 +115,6 @@ input,select,textarea{font:inherit;color:var(--text)}
 .tabbar svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .tabbar button[aria-current="page"]{color:var(--gold)}
 .tabbar .ic{position:relative;display:block;height:22px}
-.tabbar .dot{position:absolute;top:-1px;right:-4px;width:8px;height:8px;border-radius:50%;background:var(--live)}
 .tabbar .cnt{position:absolute;top:-5px;right:-10px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--gold);color:#1b271b;font-size:10px;font-weight:700;display:grid;place-items:center}
 
 /* ---------- Blocks ---------- */
@@ -143,7 +139,6 @@ input,select,textarea{font:inherit;color:var(--text)}
 .btn.ghost{background:var(--surface-2);color:var(--text)}
 .btn.line{background:none;border:1px solid var(--line);color:var(--text)}
 .btn.sm{width:auto;padding:8px 13px;border-radius:10px;font-size:12.5px}
-.proxy{border:1px dashed var(--line);border-radius:12px;padding:10px;font-size:12.5px;color:var(--muted);text-align:center;width:100%}
 .seg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:3px}
 .seg button{flex:1;padding:8px 4px;border-radius:9px;font-size:12.5px;font-weight:600;color:var(--muted);text-align:center}
 .seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--text)}
@@ -213,47 +208,14 @@ input,select,textarea{font:inherit;color:var(--text)}
 .chart text{font-family:var(--body);fill:var(--muted)}
 
 /* Live */
-.code-input{font-family:var(--num);font-weight:800;font-size:24px;letter-spacing:.14em;text-align:center;text-transform:uppercase}
-.code-box{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px dashed rgba(233,191,0,.35);padding-top:12px}
-.code-box b{font-family:var(--num);font-weight:800;font-size:26px;letter-spacing:.14em;color:var(--gold-hi)}
-.timer{position:relative;width:62px;height:62px;flex-shrink:0}
-.timer svg{width:62px;height:62px;transform:rotate(-90deg)}
-.timer b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--num);font-weight:800;font-size:17px}
-.h-timer{font-family:var(--num);font-weight:800;font-size:34px;line-height:1}
-.q-text{font-size:18px;font-weight:600;line-height:1.35;text-wrap:pretty}
-.answer-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
-.answer-line b{font-family:var(--display);font-weight:700;font-size:17px;color:var(--gold);text-align:right}
-.opts{display:flex;flex-direction:column;gap:9px}
-.opt{display:flex;align-items:center;gap:12px;width:100%;padding:13px 14px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);font-weight:500}
-.opt .letter{width:28px;height:28px;border-radius:8px;background:var(--surface-2);display:grid;place-items:center;font-weight:700;font-size:13px;flex-shrink:0}
-.opt[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft)}
-.opt[aria-pressed="true"] .letter{background:var(--gold);color:#1b271b}
-.opt.right{border-color:var(--good);background:rgba(134,219,166,.12)}
-.opt.wrong{border-color:var(--live);background:rgba(240,101,90,.1)}
-.answer-input{font-size:18px;font-weight:600;text-align:center}
-.dots{display:flex;gap:5px}
-.dots i{flex:1;height:4px;border-radius:4px;background:var(--surface-2)}
-.dots i.done{background:var(--gold)}
-.dots i.now{background:var(--text)}
 .big{font-family:var(--num);font-weight:800;font-size:50px;line-height:1;color:var(--gold)}
-.big.word{font-family:var(--display);font-weight:700;line-height:1.1}
 .wait{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:22px 16px}
 .wait .spin{width:26px;height:26px;border-radius:50%;border:3px solid var(--surface-2);border-top-color:var(--gold);animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.brow{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px}
-.brow.me{background:var(--gold-soft)}
-.brow .pos{width:20px;font-family:var(--num);font-weight:700;font-size:12.5px;color:var(--muted)}
-.brow .t{flex:1;min-width:0;font-weight:600;font-size:14px}
-.brow .d{font-size:12px;color:var(--good);font-weight:700;min-width:22px;text-align:right}
-.brow .gap{color:var(--muted);text-align:center;width:100%;font-size:12px}
 .inc{display:flex;align-items:center;gap:10px}
 .inc .t{flex:1;min-width:0}
 .inc .t b{display:block;font-weight:600;font-size:13.5px;line-height:1.2}
 .inc .t span{font-size:13px;color:var(--muted)}
-.st{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}
-.st.ok{background:rgba(134,219,166,.18);color:var(--good)}
-.st.no{background:rgba(240,101,90,.16);color:#ffa39a}
-.st.maybe{background:rgba(247,160,74,.2);color:#f8b56f}
 .mk{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:700;flex-shrink:0;border:1px solid var(--line)}
 .mk.ok{background:rgba(134,219,166,.18);color:var(--good);border-color:transparent}
 .mk.no{background:rgba(240,101,90,.14);color:#ffa39a;border-color:transparent}
@@ -316,21 +278,21 @@ input,select,textarea{font:inherit;color:var(--text)}
       <div class="eyebrow">Прототип приложения</div>
       <h1>Игры, рейтинг и клуб в одном приложении</h1>
     </div>
-    <p>Гости записываются и отвечают с телефона. Организатор ведёт игру, видит гостей и оплату, отправляет анонсы.</p>
+    <p>Гости записываются на игры и следят за рейтингом. Организатор видит гостей и оплату, получает заявки и отправляет анонсы.</p>
     <div>
       <div class="jlabel">Приложение игрока</div>
       <div class="jgrid">
         <button class="jump" data-jump="p:afisha">Афиша и запись</button>
         <button class="jump" data-jump="p:rating">Рейтинг сезона</button>
-        <button class="jump" data-jump="p:live">Игра LIVE</button>
         <button class="jump" data-jump="p:club">Клуб</button>
+        <button class="jump" data-jump="p:club:partners">Партнёрам</button>
       </div>
     </div>
     <div>
       <div class="jlabel">Пульт организатора</div>
       <div class="jgrid">
-        <button class="jump" data-jump="h:live">Ведение игры</button>
         <button class="jump" data-jump="h:guests">Гости и оплата</button>
+        <button class="jump" data-jump="h:guests:leads">Заявки</button>
         <button class="jump" data-jump="h:msg">Рассылка</button>
         <button class="jump" data-jump="h:season">Статистика</button>
       </div>
@@ -339,7 +301,7 @@ input,select,textarea{font:inherit;color:var(--text)}
       <div class="jlabel">Попробуйте</div>
       <ol>
         <li>Запишите команду в афише. Запись сразу появится у организатора в «Гостях».</li>
-        <li>Войдите в LIVE по коду, запустите вопрос с пульта и ответьте с телефона игрока.</li>
+        <li>Оставьте заявку на партнёрский пакет в «Клубе». Она появится у организатора в «Заявках».</li>
         <li>Отправьте рассылку с пульта. Уведомление придёт на телефон игрока.</li>
       </ol>
     </div>
@@ -375,7 +337,6 @@ const IC = {
   swap:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg>',
   afisha:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
   rating:'<svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 6h3a3 3 0 0 1-3 4M7 6H4a3 3 0 0 0 3 4"/></svg>',
-  live:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>',
   club:'<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5.5 5"/></svg>',
   profile:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
   guests:'<svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M17 17l2 2 3-4"/></svg>',
@@ -471,38 +432,20 @@ const PARTNERS = [
 const REVIEWS = [
   {name:"Гость 1",stars:5,date:"пример",text:"Пришли вдвоём, нас посадили к команде. Через три вопроса уже спорили как старые друзья."},
   {name:"Гость 2",stars:5,date:"пример",text:"Вопросы на логику, а не на зубрёжку. Отдельное спасибо за торт в финале."},
-  {name:"Гость 3",stars:4,date:"пример",text:"Красивый вечер. Хотелось бы видеть счёт команд после каждого вопроса."}
+  {name:"Гость 3",stars:4,date:"пример",text:"Красивый вечер. Хотелось бы записываться на игру без переписки."}
 ];
 const GUESTS_BY_GAME = [36,41,43,47,52,50,56,58,61,63];
-
-// Live demo: first questions of «Дело в шляпе»
-const CODE = "IQ1119", QTIME = 60;
-const QS = [
-  {type:"text",q:"Эту шляпу плетут в Эквадоре, а названа она в честь страны, где строили знаменитый канал. Что это за шляпа?",a:"Панама",acc:["панама","панамка","шляпа панама","панамская шляпа"],wrong:["Сомбреро","Канотье","Боливар"],near:"Понама",nearBy:"Финики",note:"Панамы плетут в Эквадоре из соломки токилья. Имя прижилось из-за Панамы: через неё шляпы расходились по миру."},
-  {type:"choice",q:"Какого цвета береты у миротворцев ООН?",o:["Зелёные","Голубые","Малиновые","Чёрные"],a:1,note:"«Голубые береты» и «голубые каски» давно стали вторым названием миротворцев."},
-  {type:"text",q:"Кто у Льюиса Кэрролла устраивает Безумное чаепитие вместе с Мартовским Зайцем и Соней?",a:"Шляпник",acc:["шляпник","безумный шляпник","болванщик","шляпочник"],wrong:["Чеширский Кот","Белый Кролик","Червонный Валет"],near:"Шляпнек",nearBy:"Сова Минервы",note:"В переводе Нины Демуровой он Болванщик. Принимаются оба варианта."},
-  {type:"choice",q:"Как называется складной цилиндр, который можно сплющить и нести под мышкой?",o:["Котелок","Канотье","Шапокляк","Федора"],a:2,note:"От французского chapeau claque. В честь шляпы назвали и старуху из мультфильма."},
-  {type:"text",q:"Как называется мягкая фетровая шляпа, без которой не обходится Индиана Джонс?",a:"Федора",acc:["федора","шляпа федора","fedora"],wrong:["Стетсон","Трилби","Хомбург"],near:"Фидора",nearBy:"Без Гугла",note:"Название пришло из пьесы «Федора» 1882 года: такую шляпу носила героиня Сары Бернар."}
-];
-const ansText = q=>q.type==="choice"?q.o[q.a]:q.a;
-const LIVE_TEAMS = RES.map(r=>r.team);
 
 /* ================= State ================= */
 const DUAL = window.matchMedia("(min-width:1200px)");
 const S = {
   role:"player",
   bookings:[],
-  p:{tab:"afisha",stack:[],rateSeg:"season",clubSeg:"people",form:null,rev:{stars:5,name:"Алексей",text:""},lead:{company:"",guests:"20–50 гостей",when:"",contact:""},partner:{pack:"p5",brand:"",contact:""},city:"dubai",code:CODE},
-  h:{tab:"live",guestSeg:"teams",game:null,msg:{aud:"game",text:""}}
+  p:{tab:"afisha",stack:[],rateSeg:"season",clubSeg:"people",form:null,rev:{stars:5,name:"Алексей",text:""},lead:{company:"",guests:"20–50 гостей",when:"",contact:""},partner:{pack:"p5",brand:"",contact:""},city:"dubai"},
+  h:{tab:"guests",guestSeg:"teams",game:null,msg:{aud:"game",text:""}}
 };
 (function sampleBooking(){ const g=upcoming()[1]; if(!g||REG[g.id].length>=g.max) return; REG[g.id].push(reg(ME.team,5,1,{mine:true})); S.bookings.push({game:g.id,team:ME.team,players:5,pay:"Apple Pay",solo:false}); })();
-let G = newGame();
-function newGame(){ return {status:"lobby",qi:-1,el:0,time:QTIME,joined:false,correct:0,published:false,answers:{},plan:[],closeAt:null,draft:"",pick:null,teams:LIVE_TEAMS.map(team=>({team,pts:0,d:0,me:team===ME.team}))}; }
-const hostPresent = ()=>DUAL.matches || S.role==="host";
-const playerPresent = ()=>DUAL.matches || S.role==="player";
-const meConnected = ()=>G.joined || !playerPresent();
 const booking = id=>S.bookings.find(b=>b.game===id);
-const inPlay = ()=>G.status==="question"||G.status==="review"||G.status==="reveal";
 const newCount = ()=>Object.values(REG).flat().filter(r=>r.isNew).length + Object.values(SOLO).flat().filter(r=>r.isNew).length + LEADS.filter(l=>l.isNew).length;
 
 /* ================= Device shell ================= */
@@ -514,7 +457,7 @@ function Device(el,name,other,otherLabel){
 Device.prototype.paint = function(o){
   const keep = o.key===this.key ? this.view.scrollTop : 0;
   this.top.innerHTML = (o.back?`<button class="back" data-act="back" aria-label="Назад">${IC.back}</button>`:`<svg class="logo" aria-hidden="true"><use href="#iqon"/></svg>`)
-    + `<h2>${o.title}</h2>` + (o.live?`<span class="chip-live">в эфире</span>`:"")
+    + `<h2>${o.title}</h2>`
     + `<button class="role-sw" data-act="role" data-r="${this.other}">${IC.swap}${this.otherLabel}</button>`;
   this.view.innerHTML=o.html; this.view.scrollTop=keep; this.key=o.key;
 };
@@ -585,7 +528,6 @@ const PV = {
     h+=`<p class="demo-flag">${season?"Сумма очков за все игры сезона. В конце года наградим победителей.":"Одно очко за каждый верный ответ, всего 20 вопросов."}</p>`;
     return {title:"Рейтинг",html:h};
   },
-  live(){ return PLIVE(); },
   club(){
     const k=S.p.clubSeg;
     let h=`<div class="seg" role="group" aria-label="Раздел клуба">${[["people","Участники"],["partners","Партнёры"],["reviews","Отзывы"]].map(([v,l])=>`<button data-act="cseg" data-k="${v}" aria-pressed="${k===v}">${l}</button>`).join("")}</div>`;
@@ -669,91 +611,14 @@ const PD = {
   }
 };
 
-/* ================= Player: LIVE ================= */
-function ranked(){ return [...G.teams].sort((a,c)=>c.pts-a.pts||(c.me-a.me)).map(r=>({r,pos:1+G.teams.filter(t=>t.pts>r.pts).length})); }
-const myPlace = ()=>ranked().find(x=>x.r.me).pos;
-function boardRows(compact){
-  const b=ranked();
-  const row=x=>{ const r=x.r; return `<div class="brow ${r.me?"me":""}"><span class="pos num">${x.pos}</span>${av(r.team,26)}<span class="t">${esc(r.team)}</span><span class="d">${r.d?"+"+r.d:""}</span><b class="num">${r.pts}</b></div>`; };
-  if(!compact) return b.map(row).join("");
-  const mi=b.findIndex(x=>x.r.me);
-  let out=b.slice(0,5).map(row).join("");
-  if(mi>=5) out+=`<div class="brow"><span class="gap">· · ·</span></div>`+row(b[mi]);
-  return out;
-}
-function PLIVE(){
-  const title="Игра LIVE", N=G.teams.length, n=Object.keys(G.answers).length, q=QS[G.qi], mine=G.answers[ME.team];
-  const dots=cur=>`<div class="dots">${QS.map((_,i)=>`<i class="${i<cur?"done":i===cur?"now":""}"></i>`).join("")}</div>`;
-  if(!G.joined){
-    return {title,html:`<div class="card" style="display:flex;flex-direction:column;gap:14px">
-      <div><b>Подключиться к игре</b><p class="small muted">${G.status==="lobby"?"Код покажет ведущий в начале вечера.":"Игра уже идёт. Введите код, чтобы подключить команду."}</p></div>
-      <div class="field"><label for="p-code">Код игры</label><input id="p-code" class="code-input" maxlength="8" value="${esc(S.p.code)}" data-bind="code" data-enter="join" autocomplete="off"></div>
-      <div class="field"><span class="flabel">Команда</span><div class="row" style="background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:10px 14px">${av(ME.team,28)}<b style="font-weight:600">${ME.team}</b></div></div>
-      <button class="btn" data-act="join">Войти в игру</button></div>
-      <div class="card"><div class="label mb6">Как это работает</div><ol class="steps"><li class="now"><b>Вопрос</b><span>появляется на телефоне капитана</span></li><li><b>Минута</b><span>на обсуждение и ответ</span></li><li><b>Счёт</b><span>обновляется после каждого вопроса</span></li></ol></div>
-      <p class="demo-flag">Демо: первые ${QS.length} вопросов игры «Дело в шляпе»</p>`};
-  }
-  if(G.status==="lobby"){
-    return {title,html:`<section class="hero slim"><div class="row between"><span class="eyebrow">Вы в игре</span><span class="pill good">Подключено</span></div><h3>«Дело в шляпе»</h3><div class="hero-meta"><span>Команда «${ME.team}» · стол 8</span></div></section>
-      <div class="card wait"><span class="spin"></span><b>Ждём ведущего</b><span class="small muted">Первый вопрос появится здесь, как только ведущий его запустит.</span></div>
-      <div class="card"><div class="row between mb6"><span class="label">В зале</span><b class="num">${N} ${pTeams(N)}</b></div><div class="chips">${G.teams.map(t=>`<span class="pill ${t.me?"gold":""}">${esc(t.team)}</span>`).join("")}</div></div>
-      <button class="proxy" data-act="xLaunch">Демо: запустить вопрос за ведущего</button>`};
-  }
-  if(G.status==="question" && !mine){
-    const C=2*Math.PI*27;
-    const body = q.type==="choice"
-      ? `<div class="opts">${q.o.map((o,i)=>`<button class="opt" data-act="pick" data-i="${i}" aria-pressed="${G.pick===i}"><span class="letter">${"АБВГ"[i]}</span>${esc(o)}</button>`).join("")}</div>`
-      : `<div class="field"><label for="p-ans-in">Ответ команды</label><input id="p-ans-in" class="answer-input" value="${esc(G.draft)}" data-bind="draft" data-enter="submit" placeholder="Введите ответ" autocomplete="off" autocapitalize="sentences"></div>`;
-    const ready = q.type==="choice" ? G.pick!==null : G.draft.trim().length>0;
-    return {title,live:true,html:`${dots(G.qi)}
-      <div class="row between"><div><div class="label">Вопрос ${G.qi+1} из ${QS.length}</div><div class="small muted">«Дело в шляпе»</div></div>
-      <div class="timer"><svg viewBox="0 0 62 62"><circle cx="31" cy="31" r="27" fill="none" stroke="#334433" stroke-width="5"/><circle id="p-tring" cx="31" cy="31" r="27" fill="none" stroke="${G.time<=10?"#f0655a":"#e9bf00"}" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-G.time/QTIME)}"/></svg><b id="p-tnum" class="num">${G.time}</b></div></div>
-      <p class="q-text">${esc(q.q)}</p>${body}
-      <button class="btn" id="p-submit" data-act="submit" ${ready?"":"disabled"}>Отправить ответ</button>`};
-  }
-  if(G.status==="question"){
-    return {title,live:true,html:`${dots(G.qi)}
-      <div class="row between"><div><div class="label">Вопрос ${G.qi+1} из ${QS.length}</div><div class="small muted">Ответ отправлен</div></div><div class="h-timer num" id="p-tnum" style="font-size:24px">${G.time}</div></div>
-      <div class="card"><p class="small muted">${esc(q.q)}</p><div class="answer-line"><span class="xs muted">Ваш ответ</span><b>${esc(mine.text)}</b></div></div>
-      <div class="card wait"><span class="spin"></span><b>Ждём остальные команды</b><span class="small muted">Ответили <span class="num" id="p-ans">${n} из ${N}</span></span></div>
-      <button class="proxy" data-act="xClose">Демо: закрыть приём ответов за ведущего</button>`};
-  }
-  if(G.status==="review"){
-    return {title,live:true,html:`${dots(G.qi)}
-      <div class="card"><p class="small muted">${esc(q.q)}</p><div class="answer-line"><span class="xs muted">Ваш ответ</span><b>${mine?esc(mine.text):"нет ответа"}</b></div></div>
-      <div class="card wait"><span class="spin"></span><b>Ведущий проверяет ответы</b><span class="small muted">Правильный ответ и счёт появятся через несколько секунд.</span></div>
-      <button class="proxy" data-act="xReveal">Демо: показать ответ за ведущего</button>`};
-  }
-  if(G.status==="reveal"){
-    const ok=mine&&mine.status==="ok";
-    const verdict = !mine?`<span class="pill warn">Нет ответа</span>` : ok?`<span class="pill good">${mine.was==="maybe"?"Зачтено ведущим":"Верно"} · +1</span>` : `<span class="pill warn">Неверно</span>`;
-    const detail = q.type==="choice"
-      ? `<div class="opts">${q.o.map((o,i)=>`<div class="opt ${i===q.a?"right":(mine&&mine.idx===i?"wrong":"")}"><span class="letter">${"АБВГ"[i]}</span>${esc(o)}</div>`).join("")}</div>`
-      : (mine?`<div class="card kv list"><div><span>Ваш ответ</span><b>${esc(mine.text)}</b></div></div>`:"");
-    const last=G.qi===QS.length-1;
-    return {title,live:true,html:`${dots(G.qi+1)}
-      <div class="card" style="display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center">${verdict}<div class="xs muted">Правильный ответ</div><div class="big word" style="font-size:32px">${esc(ansText(q))}</div><p class="small muted">${esc(q.note)}</p></div>
-      ${detail}
-      <div class="card"><div class="row between mb6"><span class="label">Счёт после вопроса ${G.qi+1}</span><span class="chip-live">live</span></div>${boardRows(true)}</div>
-      <p class="demo-flag">${last?"Ждём итоги от ведущего":"Ждём следующий вопрос"}</p>
-      <button class="proxy" data-act="xNext">Демо: ${last?"подвести итоги":"следующий вопрос"} за ведущего</button>`};
-  }
-  // final
-  const b=G.teams, pos=myPlace();
-  return {title,html:`<section class="hero" style="align-items:center;text-align:center"><span class="eyebrow">Демо-раунд завершён</span><div class="big num">${G.correct}/${QS.length}</div><div class="small" style="color:#d9e0d6">верных ответов у вашей команды</div><span class="pill gold">${pos} место из ${b.length}</span>${G.published?`<span class="pill good">Итоги опубликованы</span>`:""}</section>
-    <div class="card"><div class="label mb6">Счёт</div>${boardRows(true)}</div>
-    <div class="card small" style="text-align:center">Подарки победителям вечера от партнёра <b>${esc(game("g11").partner)}</b></div>
-    <button class="btn ghost" data-act="liveReset">Сыграть демо ещё раз</button>`};
-}
-
 /* ================= Player: render ================= */
-const PTABS=[["afisha","Афиша"],["rating","Рейтинг"],["live","LIVE"],["club","Клуб"],["profile","Профиль"]];
+const PTABS=[["afisha","Афиша"],["rating","Рейтинг"],["club","Клуб"],["profile","Профиль"]];
 function renderP(){
   const st=S.p.stack, top=st[st.length-1];
   const v= top ? PD[top.v](top) : PV[S.p.tab]();
-  const key= top ? JSON.stringify(top) : S.p.tab+(S.p.tab==="afisha"?S.p.city:S.p.tab==="live"?`${G.joined}${G.status}${G.qi}${!!G.answers[ME.team]}`:S.p.tab==="rating"?S.p.rateSeg:S.p.tab==="club"?S.p.clubSeg:"");
-  P.paint({title:v.title,html:v.html,back:!!top,live:v.live,key});
-  P.tabs.innerHTML=PTABS.map(([k,l])=>`<button data-tab="${k}" ${S.p.tab===k?'aria-current="page"':""}><span class="ic">${IC[k]}${k==="live"&&inPlay()?'<span class="dot"></span>':""}</span>${l}</button>`).join("");
+  const key= top ? JSON.stringify(top) : S.p.tab+(S.p.tab==="afisha"?S.p.city:S.p.tab==="rating"?S.p.rateSeg:S.p.tab==="club"?S.p.clubSeg:"");
+  P.paint({title:v.title,html:v.html,back:!!top,key});
+  P.tabs.innerHTML=PTABS.map(([k,l])=>`<button data-tab="${k}" ${S.p.tab===k?'aria-current="page"':""}><span class="ic">${IC[k]}</span>${l}</button>`).join("");
 }
 function goP(tab){ P.close(); S.p.tab=tab; S.p.stack=[]; renderP(); }
 
@@ -844,146 +709,19 @@ function partnerSheet(){
 }
 function introSheet(){
   P.open(`<div class="brand"><svg class="logo" role="img" aria-label="Логотип IQ ON"><use href="#iqon"/></svg><div><b>IQ ON</b><span>Интеллектуальные игры успешных людей</span></div></div><h3>Прототип приложения</h3>
-    <p class="small muted">Здесь две половины: приложение для гостей и пульт организатора. Они связаны: запись, ответы и рассылки сразу видны с другой стороны. Переключатель всегда в правом верхнем углу.</p>
+    <p class="small muted">Здесь две половины: приложение для гостей и пульт организатора. Они связаны: запись, заявки и рассылки сразу видны с другой стороны. Переключатель всегда в правом верхнем углу.</p>
     <button class="btn" data-act="closeSheet">Смотреть как игрок</button>
     <button class="btn ghost" data-act="role" data-r="host">Открыть пульт организатора</button>
     <p class="demo-flag">Логотип и пакеты из презентации IQ ON, игра 19 ноября и топ-5 из Instagram. Остальное — демо-данные.</p>`);
 }
 
-/* ================= Live engine ================= */
-let loop=null;
-function stopLoop(){ if(loop){ clearInterval(loop); loop=null; } }
-function norm(s){ return String(s).toLowerCase().replace(/ё/g,"е").replace(/[^a-zа-я0-9 ]/g," ").replace(/\s+/g," ").trim(); }
-function lev(a,b){ const m=a.length,n=b.length; let prev=Array.from({length:n+1},(_,i)=>i); for(let i=1;i<=m;i++){ const cur=[i]; for(let j=1;j<=n;j++) cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1)); prev=cur; } return prev[n]; }
-function judge(q,text){ const t=norm(text); if(!t) return "no"; if(q.acc.includes(t)) return "ok"; return t.length>=4 && q.acc.some(a=>lev(a,t)<=2) ? "maybe" : "no"; }
-function botPlan(t,q){
-  const s=t.me?.72:(res(t.team)||{skill:.6}).skill, at=2+Math.random()*11;
-  if(q.type==="choice"){
-    let idx=q.a; if(Math.random()>=s){ const w=q.o.map((_,i)=>i).filter(i=>i!==q.a); idx=w[Math.floor(Math.random()*w.length)]; }
-    return {team:t.team,at,text:q.o[idx],idx,status:idx===q.a?"ok":"no",done:false};
-  }
-  if(q.nearBy===t.team) return {team:t.team,at,text:q.near,status:"maybe",done:false};
-  const ok=Math.random()<s;
-  return {team:t.team,at,text:ok?q.a:q.wrong[Math.floor(Math.random()*q.wrong.length)],status:ok?"ok":"no",done:false};
-}
-function putAnswer(team,a){ G.answers[team]=Object.assign({was:a.status,at:G.el},a); }
-function launchQuestion(i){
-  const q=QS[i];
-  Object.assign(G,{status:"question",qi:i,el:0,time:QTIME,answers:{},closeAt:null,draft:"",pick:null});
-  G.teams.forEach(t=>t.d=0);
-  G.plan=G.teams.filter(t=>!t.me||!playerPresent()).map(t=>botPlan(t,q));
-  if(playerPresent()){
-    if(!G.joined) P.banner("Игра началась",`Введите код ${CODE}, чтобы подключить команду.`,"live");
-    else if(S.p.tab!=="live"||S.p.stack.length) P.banner(`Вопрос ${i+1}`,"Вопрос уже на экране. Минута на ответ.","live");
-  }
-  renderP(); renderH();
-  stopLoop(); loop=setInterval(tick,250);
-}
-function tick(){
-  if(G.status!=="question"){ stopLoop(); return; }
-  G.el+=0.25;
-  let changed=false;
-  G.plan.forEach(p=>{ if(!p.done&&p.at<=G.el){ p.done=true; if(!G.answers[p.team]){ putAnswer(p.team,{text:p.text,idx:p.idx,status:p.status}); changed=true; } } });
-  const left=Math.max(0,Math.ceil(QTIME-G.el));
-  if(changed && G.joined && G.answers[ME.team] && !byId("p-ans") && S.p.tab==="live" && !S.p.stack.length) renderP();
-  if(left!==G.time||changed){ G.time=left; liveTick(changed); }
-  if((G.closeAt!==null&&G.el>=G.closeAt)||G.el>=QTIME) closeAnswers();
-}
-function setText(id,t){ const e=byId(id); if(e) e.textContent=t; }
-function liveTick(changed){
-  const n=Object.keys(G.answers).length, N=G.teams.length;
-  setText("p-tnum",G.time); setText("p-ans",`${n} из ${N}`);
-  const ring=byId("p-tring"); if(ring){ ring.setAttribute("stroke-dashoffset",2*Math.PI*27*(1-G.time/QTIME)); if(G.time<=10) ring.setAttribute("stroke","#f0655a"); }
-  setText("h-tnum",fmt(G.time)); setText("h-ans",`${n} из ${N}`);
-  const bar=byId("h-tbar"); if(bar) bar.style.width=(G.time/QTIME*100)+"%";
-  if(changed){
-    const inc=byId("h-incoming"); if(inc) inc.innerHTML=incomingHTML();
-    const btn=byId("h-close"); if(btn&&n===N){ btn.classList.remove("ghost"); btn.textContent="Все ответили · закрыть приём"; }
-  }
-}
-function closeAnswers(){
-  if(G.status!=="question") return;
-  stopLoop();
-  if(hostPresent()){ G.status="review"; renderP(); renderH(); }
-  else { Object.values(G.answers).forEach(a=>{ if(a.status==="maybe") a.status="ok"; }); reveal(); }
-}
-function reveal(){
-  if(G.status!=="review"&&G.status!=="question") return;
-  stopLoop();
-  G.teams.forEach(t=>{ const a=G.answers[t.team]; t.d=a&&a.status==="ok"?1:0; t.pts+=t.d; if(t.me&&t.d) G.correct++; });
-  G.status="reveal"; renderP(); renderH();
-}
-function nextStep(){
-  if(G.status!=="reveal") return;
-  if(G.qi<QS.length-1) launchQuestion(G.qi+1);
-  else { G.status="final"; G.teams.forEach(t=>t.d=0); renderP(); renderH(); }
-}
-function playerSubmit(){
-  if(G.status!=="question"||G.answers[ME.team]) return;
-  const q=QS[G.qi];
-  if(q.type==="choice"){ if(G.pick===null) return; putAnswer(ME.team,{text:q.o[G.pick],idx:G.pick,status:G.pick===q.a?"ok":"no"}); }
-  else { const t=G.draft.trim(); if(!t) return; putAnswer(ME.team,{text:t,status:judge(q,t)}); }
-  G.plan.forEach(p=>{ if(p.team===ME.team) p.done=true; });
-  if(!hostPresent()){ G.plan.forEach(p=>{ if(!p.done) p.at=G.el+0.4+Math.random()*1.6; }); G.closeAt=G.el+2.6; }
-  renderP(); liveTick(true);
-}
-function resetLive(){ stopLoop(); G=newGame(); renderP(); renderH(); }
-
 /* ================= Host: views ================= */
-function incomingHTML(){
-  const list=Object.entries(G.answers).sort((a,b)=>b[1].at-a[1].at);
-  if(!list.length) return `<div class="small muted">Пока никто не ответил</div>`;
-  return list.map(([team,a])=>`<div class="inc">${av(team,28)}<span class="t"><b>${esc(team)}</b><span>${esc(a.text)}</span></span><span class="xs muted num">${fmt(Math.round(a.at))}</span><span class="st ${a.status}">${a.status==="ok"?"✓":a.status==="no"?"✕":"?"}</span></div>`).join("");
-}
-function hostLive(){
-  const N=G.teams.length, n=Object.keys(G.answers).length, q=QS[G.qi];
-  if(G.status==="lobby"){
-    const meIn=meConnected();
-    return `<section class="hero slim"><div class="row between"><span class="eyebrow">Игра №11 · лобби</span><span class="pill gold">${N-(meIn?0:1)} из ${N} в игре</span></div><h3>«Дело в шляпе»</h3>
-        <div class="code-box"><span class="small" style="color:#d9e0d6">Код для команд</span><b>${CODE}</b></div></section>
-      <div class="card"><div class="label mb6">Команды</div><div class="chips">${G.teams.map(t=>`<span class="pill ${t.me&&!meIn?"off":"good"}">${esc(t.team)}</span>`).join("")}</div>${meIn?"":`<p class="xs muted mt8">Команда «${ME.team}» ещё не ввела код.</p>`}</div>
-      <div class="card"><div class="label mb6">Сценарий вечера</div><ol class="steps"><li class="now"><b>Вопросы 1–10</b><span>минута на каждый</span></li><li><b>Капитанский конкурс</b></li><li><b>Вопросы 11–20</b></li><li><b>Награждение</b><span>подарки и торт</span></li></ol><p class="xs muted mt8">В демо играем первые ${QS.length} вопросов.</p></div>
-      <button class="btn" data-act="launch">Запустить вопрос 1</button>`;
-  }
-  if(G.status==="question"){
-    return `<div class="row between"><div><div class="label">Вопрос ${G.qi+1} из ${QS.length}</div><div class="small muted">Команды отвечают</div></div><div class="h-timer num" id="h-tnum">${fmt(G.time)}</div></div>
-      <div class="bar"><i id="h-tbar" style="width:${G.time/QTIME*100}%"></i></div>
-      <div class="card"><p class="q-text" style="font-size:16px">${esc(q.q)}</p><div class="answer-line"><span class="xs muted">Правильный ответ</span><b>${esc(ansText(q))}</b></div></div>
-      <div class="row between"><span class="label">Ответы команд</span><b class="num" id="h-ans">${n} из ${N}</b></div>
-      <div class="card list tight" id="h-incoming">${incomingHTML()}</div>
-      <button class="btn ${n===N?"":"ghost"}" id="h-close" data-act="close">${n===N?"Все ответили · закрыть приём":"Закрыть приём ответов"}</button>`;
-  }
-  if(G.status==="review"){
-    const cnt=s=>Object.values(G.answers).filter(a=>a.status===s).length, none=N-n;
-    const order={maybe:0,ok:1,no:2};
-    const rows=G.teams.map(t=>({t:t.team,a:G.answers[t.team]})).sort((x,y)=>(x.a?order[x.a.status]:3)-(y.a?order[y.a.status]:3));
-    return `<div class="row between"><div><div class="label">Вопрос ${G.qi+1} · проверка</div><div class="small muted">Ответ: <b style="color:var(--gold-hi)">${esc(ansText(q))}</b></div></div></div>
-      <div class="chips"><span class="pill good">Верно ${cnt("ok")}</span><span class="pill warn">Неверно ${cnt("no")}</span>${cnt("maybe")?`<span class="pill amber">Спорные ${cnt("maybe")}</span>`:""}${none?`<span class="pill">Без ответа ${none}</span>`:""}</div>
-      <div class="card list tight">${rows.map(({t,a})=>`<div class="inc">${av(t,28)}<span class="t"><b>${esc(t)}</b><span>${a?esc(a.text):"нет ответа"}</span></span>${
-        !a?"" : a.status==="maybe"?`<button class="btn sm" data-act="mark" data-t="${esc(t)}" data-s="ok">Зачесть</button><button class="btn sm ghost" data-act="mark" data-t="${esc(t)}" data-s="no">Нет</button>`
-        : `<button class="mk ${a.status}" data-act="mark" data-t="${esc(t)}" data-s="${a.status==="ok"?"no":"ok"}" aria-label="${a.status==="ok"?"Зачтено, нажмите чтобы снять":"Не зачтено, нажмите чтобы зачесть"}">${a.status==="ok"?"✓":"✕"}</button>`}</div>`).join("")}</div>
-      ${cnt("maybe")?`<p class="xs muted">Спорные ответы приложение не засчитывает само. Решение за ведущим.</p>`:""}
-      <button class="btn" data-act="reveal">Показать ответ командам</button>`;
-  }
-  if(G.status==="reveal"){
-    const last=G.qi===QS.length-1, got=G.teams.filter(t=>t.d).length;
-    return `<div class="row between"><div><div class="label">Вопрос ${G.qi+1} · ответ показан</div><div class="small muted">Верно ответили ${got} из ${N}</div></div><span class="pill gold">${esc(ansText(q))}</span></div>
-      <div class="card"><div class="row between mb6"><span class="label">Счёт</span><span class="chip-live">на экранах команд</span></div>${boardRows(false)}</div>
-      <button class="btn" data-act="next">${last?"Подвести итоги":"Запустить вопрос "+(G.qi+2)}</button>`;
-  }
-  const lead=ranked()[0].r, tied=G.teams.filter(t=>t.pts===lead.pts).length;
-  return `<section class="hero slim" style="text-align:center;align-items:center"><span class="eyebrow">Итоги демо-раунда</span><h3>${esc(lead.team)}</h3><div class="small" style="color:#d9e0d6">${tied>1?`делит первое место: ${lead.pts} из ${QS.length}`:`лидирует: ${lead.pts} из ${QS.length}`}</div></section>
-    <div class="card">${boardRows(false)}</div>
-    ${G.published?`<div class="card small" style="text-align:center"><span class="pill good">Опубликовано</span><p class="muted mt8">Команды получили уведомление, счёт виден в приложении.</p></div>`:`<button class="btn" data-act="publish">Опубликовать итоги командам</button>`}
-    <button class="btn ghost" data-act="liveReset">Начать демо заново</button>`;
-}
 function guestTotals(id){
   const rg=REG[id], g=game(id), players=rg.reduce((s,r)=>s+r.players,0);
   const online=rg.filter(r=>r.online).reduce((s,r)=>s+r.players,0)*g.price, door=rg.filter(r=>!r.online).reduce((s,r)=>s+r.players,0)*g.price;
   return {players,online,door,inCount:rg.filter(r=>r.in).length};
 }
 const HV = {
-  live(){ return {title:"Пульт",live:inPlay(),html:hostLive()}; },
   guests(){
     const up=upcoming(); if(!S.h.game||!up.some(g=>g.id===S.h.game)) S.h.game=up[0].id;
     const g=game(S.h.game), rg=REG[g.id], solo=SOLO[g.id], t=guestTotals(g.id), k=S.h.guestSeg;
@@ -1028,13 +766,13 @@ function audiences(){
   const g=upcoming()[0];
   return [{k:"game",label:`Записались на «${g.title}»`,n:guestTotals(g.id).players},{k:"all",label:"Все участники клуба",n:386},{k:"sleep",label:"Не играли больше двух месяцев",n:74}];
 }
-const HTABS=[["live","Пульт"],["guests","Гости"],["msg","Рассылка"],["season","Сезон"]];
+const HTABS=[["guests","Гости"],["msg","Рассылка"],["season","Сезон"]];
 function renderH(){
   const v=HV[S.h.tab]();
-  const key=S.h.tab+(S.h.tab==="live"?G.status+G.qi:S.h.tab==="guests"?S.h.guestSeg+S.h.game:"");
-  H.paint({title:v.title,html:v.html,live:v.live,key});
+  const key=S.h.tab+(S.h.tab==="guests"?S.h.guestSeg+S.h.game:"");
+  H.paint({title:v.title,html:v.html,key});
   const nc=newCount();
-  H.tabs.innerHTML=HTABS.map(([k,l])=>`<button data-tab="${k}" ${S.h.tab===k?'aria-current="page"':""}><span class="ic">${IC[k]}${k==="live"&&inPlay()?'<span class="dot"></span>':""}${k==="guests"&&nc?`<span class="cnt">${nc}</span>`:""}</span>${l}</button>`).join("");
+  H.tabs.innerHTML=HTABS.map(([k,l])=>`<button data-tab="${k}" ${S.h.tab===k?'aria-current="page"':""}><span class="ic">${IC[k]}${k==="guests"&&nc?`<span class="cnt">${nc}</span>`:""}</span>${l}</button>`).join("");
 }
 function clearNew(){ Object.values(REG).flat().forEach(r=>r.isNew=false); Object.values(SOLO).flat().forEach(r=>r.isNew=false); LEADS.forEach(l=>l.isNew=false); }
 function goH(tab){ H.close(); if(S.h.tab==="guests"&&tab!=="guests") clearNew(); S.h.tab=tab; renderH(); }
@@ -1107,33 +845,9 @@ const PA = Object.assign({
     REVIEWS.unshift({name:r.name.trim()||"Гость",stars:r.stars,date:"сегодня",text}); S.p.rev={stars:5,name:r.name,text:""};
     P.close(); renderP(); P.toast("Спасибо за отзыв");
   },
-  join(){
-    const c=S.p.code.toUpperCase().replace(/[^A-Z0-9]/g,"");
-    if(c!==CODE){ P.toast("Код не подошёл. Сверьте с экраном ведущего"); return; }
-    G.joined=true; renderP(); renderH(); H.toast(`«${ME.team}» в игре`);
-    if(G.status==="lobby"&&!hostPresent()) setTimeout(()=>{ if(G.status==="lobby"&&G.joined&&!hostPresent()) launchQuestion(0); },2400);
-  },
-  pick(d){ G.pick=+d.i; P.view.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-pressed",String(o.dataset.i===d.i))); const b=byId("p-submit"); if(b) b.disabled=false; },
-  submit(){ playerSubmit(); },
-  xLaunch(){ if(G.status==="lobby") launchQuestion(0); },
-  xClose(){ closeAnswers(); },
-  xReveal(){ reveal(); },
-  xNext(){ nextStep(); },
-  liveReset(){ resetLive(); }
 },SHARED);
 const HA = Object.assign({
   banner(_,el){ el.classList.remove("show"); const go=el.dataset.go||""; if(go.startsWith("guests")){ S.h.guestSeg=go.split(":")[1]||"teams"; S.h.game=upcoming().some(g=>g.id===S.h.game)?S.h.game:null; goH("guests"); } },
-  launch(){ if(G.status==="lobby") launchQuestion(0); },
-  close(){ closeAnswers(); },
-  mark(d){ const a=G.answers[d.t]; if(a&&G.status==="review"){ a.status=d.s; renderH(); } },
-  reveal(){ reveal(); },
-  next(){ nextStep(); },
-  publish(){
-    G.published=true; const pos=myPlace();
-    P.banner("Итоги игры «Дело в шляпе»",`Ваша команда на ${pos} месте. Откройте счёт.`,"live");
-    renderP(); renderH(); H.toast("Итоги опубликованы");
-  },
-  liveReset(){ resetLive(); },
   hGame(d){ S.h.game=d.id; renderH(); },
   gseg(d){ S.h.guestSeg=d.k; renderH(); },
   checkin(d){ const r=REG[S.h.game].find(x=>x.team===d.t); if(r){ r.in=!r.in; renderH(); } },
@@ -1173,14 +887,18 @@ const HA = Object.assign({
   }
 },SHARED);
 const BIND = {
-  code:v=>S.p.code=v, ptBrand:v=>S.p.partner.brand=v, ptContact:v=>S.p.partner.contact=v, fTeam:v=>S.p.form.team=v, lCompany:v=>S.p.lead.company=v, lWhen:v=>S.p.lead.when=v, lContact:v=>S.p.lead.contact=v,
-  revName:v=>S.p.rev.name=v, revText:v=>S.p.rev.text=v, msg:v=>S.h.msg.text=v,
-  draft:v=>{ G.draft=v; const b=byId("p-submit"); if(b) b.disabled=!v.trim(); }
+  ptBrand:v=>S.p.partner.brand=v, ptContact:v=>S.p.partner.contact=v, fTeam:v=>S.p.form.team=v, lCompany:v=>S.p.lead.company=v, lWhen:v=>S.p.lead.when=v, lContact:v=>S.p.lead.contact=v,
+  revName:v=>S.p.rev.name=v, revText:v=>S.p.rev.text=v, msg:v=>S.h.msg.text=v
 };
 
 document.addEventListener("click",e=>{
   const j=e.target.closest("[data-jump]");
-  if(j){ const [r,tab]=j.dataset.jump.split(":"); P.close(); H.close(); if(r==="h"){ setRole("host"); goH(tab); } else { setRole("player"); goP(tab); } return; }
+  if(j){
+    const [r,tab,sub]=j.dataset.jump.split(":"); P.close(); H.close();
+    if(r==="h"){ setRole("host"); if(tab==="guests") S.h.guestSeg=sub||"teams"; goH(tab); }
+    else { setRole("player"); if(tab==="club") S.p.clubSeg=sub||"people"; goP(tab); }
+    return;
+  }
   const dev=e.target.closest(".device"); if(!dev) return;
   const host=dev.classList.contains("host"), D=host?H:P;
   if(e.target===D.wrap){ D.close(); return; }
